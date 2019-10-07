@@ -290,8 +290,6 @@ type Item implements Node {
   image: String
   largeImage: String
   price: Int!
-  createdAt: DateTime!
-  updatedAt: DateTime!
   user(where: UserWhereInput): User!
 }
 
@@ -311,7 +309,6 @@ input ItemCreateInput {
   image: String
   largeImage: String
   price: Int!
-  user: UserCreateOneInput!
 }
 
 input ItemCreateOneInput {
