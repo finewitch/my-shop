@@ -13,18 +13,19 @@ class Item extends Component {
                 <div className="p_container-product-inner-w">
                     <div className="c-w">{formatMoney(item.price)}</div>
                     <div className="c-g">{item.title}</div>
+                    <div className="c-g">{item.negotiable ? <div>do negocjacji</div> : <div>nie do negocjacji</div>}</div>
                     <div className="c-g"> by author</div>
                 </div>
 
-                {/* <div className="product-btnlist">
+                <div className="product-btnlist">
                     <Link
                     href={{
                         pathname : 'update',
                         query: {id: item.id },
                     }}><a className="button">edit</a></Link>
-                    <button>add</button>
+                    <button>add to cart</button>
                     <button>delete</button>
-                </div> */}
+                </div> 
                 
                 
                 

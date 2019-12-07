@@ -4,10 +4,19 @@
     background-repeat: no-repeat;
     background-position-x: 100%;
     background-position-y: 100%;
+    .image-preview{
+        border: 5px solid red;
+        width: 150px;
+        height: auto;
+        padding:0;
+    }
     textarea{
         background:none;
     }
     fieldset{
+        &[disabled] {
+            opacity: 0.5;
+          }
         &::before{
             height: 10px;
             content:'';

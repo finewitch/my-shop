@@ -7,8 +7,9 @@ import Banner from './organisms/Banner';
 class Page extends Component {
     render() {
         return (
-            <div id="wrapper">
+            // <div id="wrapper">
                 <div id="main">
+                    <Nav/>
                     <div className="inner">
                         <Meta/>
                         {/* <Header/> */}
@@ -18,8 +19,7 @@ class Page extends Component {
 						{ this.props.children }
 						
                     </div>
-                </div>
-				<Nav/>
+                {/* </div> */}
             </div>
         );
     }

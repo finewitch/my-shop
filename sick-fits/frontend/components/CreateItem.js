@@ -35,7 +35,7 @@ class CreateItem extends Component {
         image:'',
         largeImage:'',
         price:'',
-        negotiable: true,
+        negotiable: false,
         description:''
     }
     handleChange = e =>{
@@ -106,6 +106,7 @@ class CreateItem extends Component {
                         onChange={this.updateFile}
                         />
                     </div>
+                    {this.state.image && <img className="image-preview" src={this.state.image}/>}
 
                     <div className="col-12">
                         <input 
@@ -145,15 +146,21 @@ class CreateItem extends Component {
                     <div className="col-4 col-12-small">
                         <input 
                         type="radio" 
-                        id="nodis" value='true' 
+                        id="nodis" 
+                        value='false' 
                         name="negotiable" 
-                        defaultChecked={this.state.negotiable} 
+                        defaultChecked={!this.state.negotiable} 
                         onChange={this.handleChange}/>
                         <label htmlFor="nodis">non negotiable</label>
                     </div>
 
                     <div className="col-4 col-12-small">
-                        <input type="radio" id="demo-priority-normal" value='false' name="negotiable" onChange={this.handleChange}/>
+                        <input 
+                        type="radio" 
+                        id="demo-priority-normal" 
+                        value='true' 
+                        name="negotiable" 
+                        onChange={this.handleChange}/>
                         <label htmlFor="demo-priority-normal">negotiable</label>
                     </div>
 
