@@ -64,6 +64,19 @@
 		}
 
 		&.primary {
+			background-color: #1caf1c;
+			box-shadow: none;
+			color: _palette(bg) !important;
+			
+			&:hover {
+				background-color: #2ad22a
+			}
+			
+			&:active {
+				background-color: darken(_palette(accent), 3);
+			}
+		}
+		&.secondary {
 			background-color: _palette(accent);
 			box-shadow: none;
 			color: _palette(bg) !important;

@@ -13,18 +13,16 @@ class MyApp extends App {
     // be server-side rendered.
     //
     static async getInitialProps({Component, ctx}) {
-      const pageProps = {
-
-      }
+      let pageProps = {};
       if(Component.getInitialProps){
 
-        const pageProps = await App.getInitialProps(appContext);
+         pageProps = await Component.getInitialProps(ctx);
 
       }
-      pageProps.query= ctx.query;
+      pageProps.query = ctx.query;
       // calls page's `getInitialProps` and fills `appProps.pageProps`
-    
-      return { ...pageProps }
+      // console.log(pageProps.query, '<<<<<<<');
+      return { pageProps }
     }
   
     render() {
@@ -32,22 +30,21 @@ class MyApp extends App {
       return (
           <Container>
             <ApolloProvider client={apollo}>
-            <Page>
-                <Component {...pageProps} />
-            </Page>
-              <script
-              src="https://code.jquery.com/jquery-3.4.1.slim.js"
-              integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-              crossOrigin="anonymous"></script>
-              <script type="text/javascript" src="../static/js/breakpoints.min.js"></script>
-              <script type="text/javascript" src="../static/js/browser.min.js"></script>
-              <script type="text/javascript" src="../static/js/main.js"></script>
-              <script type="text/javascript" src="../static/js/util.js"></script>
+              <Page>
+                  <Component {...pageProps} />
+              </Page>
+                <script
+                src="https://code.jquery.com/jquery-3.4.1.slim.js"
+                integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+                crossOrigin="anonymous"></script>
+                <script type="text/javascript" src="../static/js/breakpoints.min.js"></script>
+                <script type="text/javascript" src="../static/js/browser.min.js"></script>
+                <script type="text/javascript" src="../static/js/main.js"></script>
+                <script type="text/javascript" src="../static/js/util.js"></script>
               </ApolloProvider>
           </Container>
 
       )
-    //   return 
     }
   }
   

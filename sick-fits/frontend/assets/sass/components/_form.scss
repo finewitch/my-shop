@@ -19,6 +19,7 @@
 	}
 
 	input[type="text"],
+	input[type="number"],
 	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
@@ -79,6 +80,7 @@
 	input[type="tel"],
 	input[type="search"],
 	input[type="url"],
+	input[type="number"],
 	select {
 		height: _size(element-height);
 	}
@@ -88,7 +90,7 @@
 	}
 
 	input[type="checkbox"],
-	input[type="radio"], {
+	input[type="radio"] {
 		@include vendor('appearance', 'none');
 		display: block;
 		float: left;
@@ -127,7 +129,7 @@
 
 		&:checked + label {
 			&:before {
-				background: _palette(fg-bold);
+				background: red;
 				border-color: _palette(fg-bold);
 				color: _palette(bg);
 				content: '\f00c';
@@ -159,7 +161,7 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: _palette(fg-light) !important;
+		color: black !important;
 		opacity: 1.0;
 	}
 

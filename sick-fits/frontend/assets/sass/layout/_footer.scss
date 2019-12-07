@@ -8,11 +8,12 @@
 
 	#footer {
 		.copyright {
-			color: _palette(fg-light);
-			font-size: 0.9em;
+			color: _palette(fg-bold);
+			font-size: 1.2em;
+			padding-left: 50px;
 
 			a {
-				color: inherit;
+				color: black;
 			}
 		}
 	}

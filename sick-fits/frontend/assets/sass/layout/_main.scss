@@ -10,17 +10,18 @@
 		@include vendor('flex-grow', '1');
 		@include vendor('flex-shrink', '1');
 		width: 100%;
+		overflow: scroll;
 
 		> .inner {
 			height: 100%;
 			// @include padding(0, 6em);
-			padding-left: 50px;
+			// padding-left: 50px;
 			margin: 0 auto;
 			max-width: 110em;
 
 			> section {
 				height: 100%;
-				@include padding(6em, 0);
+				// @include padding(6em, 0);
 				border-top: solid 2px _palette(border);
 
 				&:first-of-type {
@@ -34,7 +35,7 @@
 				@include padding(0, 5em);
 
 				> section {
-					@include padding(5em, 0);
+					// @include padding(5em, 0);
 				}
 			}
 		}

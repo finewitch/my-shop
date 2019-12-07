@@ -1,0 +1,12 @@
+.p_container{
+    border: 2px solid red;
+    width: 100%;
+    &-product{
+        border: 2px dotted black;
+        display:flex;
+        &-inner-w{
+            border: 5px solid blue;
+
+        }
+    }
+}

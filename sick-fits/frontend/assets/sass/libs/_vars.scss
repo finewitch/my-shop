@@ -21,9 +21,9 @@
 
 // Font.
 	$font: (
-		family:				('Open Sans', sans-serif),
-		family-heading:		('radnika_next', serif),
-		family-fixed:		('Courier New', monospace),
+		family:				('Quicksand', sans-serif),
+		family-heading:		('Quicksand', sans-serif),
+		family-fixed:		('Quicksand', sans-serif),
 		weight:				400,
 		weight-bold:		600,
 		weight-heading:		700,
@@ -33,12 +33,12 @@
 
 // Palette.
 	$palette: (
-		bg:					#ffffff,
-		bg-alt:				#f5f6f7,
-		fg:					#7f888f,
+		bg:					#f5dfba,
+		bg-alt:				#f5dfba,
+		fg:					black,
 		fg-bold:			#3d4449,
-		fg-light:			#9fa3a6,
-		border:				rgba(210,215,217,0.75),
+		fg-light:			#ffffff,
+		border:				#f56a6a,
 		border-bg:			transparentize(#e6ebed, 0.75),
 		accent:				#f56a6a
 	);

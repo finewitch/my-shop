@@ -1,0 +1,36 @@
+.sell{
+    margin-top: 5rem;
+    background-image: url('/static/orange-bg.png');
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 100%;
+    textarea{
+        background:none;
+    }
+    fieldset{
+        &::before{
+            height: 10px;
+            content:'';
+            display:block;
+            background: linear-gradient(to right, red, yellow, red 100%);
+        }
+        &[aria-busy='true']::before{
+            background-size: 50% auto;
+            animation: loading 0.5s linear infinite; 
+        }
+    }
+    input#filesend{
+        border: solid 1px #f56a6a;
+        border-radius: 0.375em;
+        padding: 0 1em;
+        height: 2.75em;
+        width: 100%;
+        display: block;
+        padding-top: 5px;
+
+    }
+}
+@keyframes loading {
+    from {background-position: 0 0;}
+    to {background-position: 100% 100%;}
+}
