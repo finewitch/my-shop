@@ -7,6 +7,8 @@ const Meta = () => (
     <link rel="shortcut icon" href="/static/favicon.png" />
     <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Sulphur+Point:300,400&display=swap" rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200&display=swap" rel="stylesheet"/>
 
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet"></link>

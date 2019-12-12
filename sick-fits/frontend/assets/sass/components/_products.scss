@@ -1,12 +1,45 @@
-.p_container{
-    border: 2px solid red;
-    width: 100%;
-    &-product{
-        border: 2px dotted black;
+.p_wrapper{
+    max-width: 1460px;
+    display: flex;
+    // margin: 0 auto;
+    position: relative;
+    margin-left: auto;
+    &-num{
+        // border: 2px solid black;
+        font-size: 8rem;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-weight: 100;
+        font-family: 'Source Code Pro', monospace;
+        // width: 20%;
+    }
+}
+.p_wrapper-inner{
         display:flex;
-        &-inner-w{
-            border: 5px solid blue;
+            width: 1260px;
+            // margin-left: auto;
+            display: flex;
+            margin: 50px 0 50px auto;
+        
+        &-w{
+            // background: magenta;
+            border-right: 1px solid rgb(252, 148, 148);
+            border-bottom: 1px solid rgb(252, 148, 148);
+            // border-bottom: 1px solid rgb(252, 148, 148);
+
+            width: 70%;
+            display: flex;
+            padding: 20px;
+            img{
+                max-width: 300px;
+            }
+
+        }
+        &-btnlist{
+            padding: 0 20px;
+            // background: maroon;
+            width: 30%;
 
         }
     }
-}

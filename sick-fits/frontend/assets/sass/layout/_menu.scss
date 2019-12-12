@@ -7,6 +7,13 @@
 /* Menu */
 
 	#menu {
+		display: flex;
+		// justify-content: center;
+		.menu-logo{
+			// border: 2px solid blue;
+			max-width: 100px;
+			// margin-right: auto;
+		}
 		ul {
 			@include vendor('user-select', 'none');
 			color: white;
@@ -14,19 +21,20 @@
 			font-weight: 500;
 			letter-spacing: _font(kerning-heading);
 			list-style: none;
-			margin-bottom: 0;
 			padding: 0;
 			text-transform: uppercase;
 			display: flex;
 			justify-content: center;
+			padding: 40px 0;
+			margin: 0 auto;
 
 			a, span {
 				border-bottom: 0;
-				color: black;
+				color: white;
 				cursor: pointer;
 				display: block;
 				font-size: 1.3em;
-				padding: 0.625em 0 0.625em 50px;
+				padding: 0.625em 0 0.625em 70px;
 
 				&:hover {
 					color: _palette(accent);

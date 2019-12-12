@@ -7,8 +7,20 @@ class Home extends React.Component{
         return(
             <section>
 				<div className="posts">
-					
-					<AllItems/>
+                    <div className="posts__container">
+                        
+                        <div className="posts__container-nav">
+                            <div className="label">
+                                <p className="c-w">Your weekly art</p>
+                            </div>
+                            <div className="info">
+                                <p className="c-y">contemporary and urban artists. Our stock includes lithographs, prints, drawings and original work</p>
+                            </div>
+                        </div>
+
+                        <AllItems page={parseFloat(this.props.query.page) || 1}/>
+
+                    </div>
 					
 				</div> 
 			</section>

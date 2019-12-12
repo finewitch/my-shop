@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import Nprogress from 'nprogress';
 import Router from 'next/router';
+import User from '../User';
 
 Router.onRouteChangeStart = ()=>{
     console.log('routeChangeStart trggered')
@@ -20,46 +21,23 @@ Router.onRouteChangeErro = ()=>{
 class Nav extends Component {
     render() {
         return (
-            // <div id="sidebar">
-                // <div className="inner">
+            <nav id="menu">
+                <img className="menu-logo" src="/static/LOGO-ART.svg"/>
+                <ul>
+                    <User>
+                        {(data) =>{
+                            console.log(data, "<--USER")
+                            return <p>data here</p>
+                        }}
+                    </User>
+                    <Link href="/items"><a>Shop</a></Link>
+                    <Link href="/sell"><a>Sell</a></Link>
+                    <Link href="/"><a>Orders</a></Link>
+                    <Link href="/"><a>Account</a></Link>
+                    <Link href="/signup"><a>signup</a></Link>
 
-        
-                        //<section id="search" className="alt">
-                          //  <form method="post" action="#">
-                            //    <input type="text" name="query" id="query" placeholder="Search" />
-                           // </form>
-                         // </section>
-                        <nav id="menu">
-                            <ul>
-                                
-                                <Link href="/"><a>Homepage</a></Link>
-                                <Link href="/items"><a>Shop</a></Link>
-                                <Link href="/sell"><a>Sell</a></Link>
-                                <Link href="/"><a>Orders</a></Link>
-                                <Link href="/"><a>Accounts</a></Link>
-                            </ul>
-                        </nav>
-
-
-                        // <section>
-                        //     <header className="major">
-                        //         <h2>Get in touch</h2>
-                        //     </header>
-                        //     {/* <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> */}
-                        //     <ul className="contact">
-                        //         <li><a href="#">joannawilhelmina@gmail.comt</a></li>
-                        //         {/* <li className="icon solid fa-phone">(000) 000-0000</li> */}
-                        //         {/* <li className="icon solid fa-home">1234 Somewhere Road #8254<br />
-                        //         Nashville, TN 00000-0000</li> */}
-                        //     </ul>
-                        // </section>
-
-                        // <footer id="footer">
-                        //     <p className="copyright">&copy; Untitled. All rights reserved. <br/>Demo Images: <a href="https://unsplash.com">Unsplash</a>. <br/>Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-                        // </footer>
-
-                // </div>
-            // </div>
+                </ul>
+            </nav>                       
         );
     }
 }

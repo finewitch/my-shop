@@ -14,6 +14,48 @@
 		// margin: 0 0 _size(element-margin) ($gutter * -1);
 		// width: calc(100% + #{$gutter});
 		height: 100%;
+		&__container{
+			// border: 10px solid black;
+			width: 100%;
+			margin: 0 auto;
+			// margin-top: 50px;
+			&-nav{
+				
+				max-width: 1260px;
+				// border: 10px solid yellow;
+				display: flex;
+				justify-content: space-between;
+				margin-left: auto;
+				padding:50px 0;
+				padding-bottom: 0px;
+
+				div{
+					// border: 1px dotted green;
+					padding: 0 20px;
+				}
+				.label, .info{
+					font-family: 'Sulphur Point', sans-serif;
+					display: flex;
+					width: 70%;
+					border-right: 1px solid rgb(252, 148, 148);
+					border-bottom: 1px solid rgb(252, 148, 148);
+					font-size: 3rem;
+					justify-content: flex-end;
+					font-weight: 100;
+					p{
+						margin: 1rem 0;
+						// text-align: right;
+					}
+				}
+				.info{
+					width: 30%;	
+					font-size: 1.3rem;
+					justify-content: flex-start;
+					align-items: center;
+					border-right: none;
+				}
+			}
+		}
 
 		article {
 			@include vendor('flex-grow', '0');
