@@ -4,6 +4,7 @@ import formatMoney from '../lib/formatMoney';
 import gql from 'graphql-tag'; 
 import Error from './ErrorMessage'
 import { de } from 'date-fns/locale';
+import Router from 'next/router';
 
 import ImageGallery from './ImageGallery'
 
@@ -88,10 +89,17 @@ class CreateItem extends Component {
                     console.log(this.state);
                     const res = await mutationfunction()
                     console.log(res);
+
+                    Router.push({
+                        pathname: '/item',
+                        query: { id: res.data.createItem.id },
+                      });
                 }} >
 
                 <Error error={error}/>
 
+                <h1>Sell a <span className="f-lecker">toy</span></h1>
+                
                 <fieldset disabled={loading} aria-busy={loading}>
 
                 <div className="row gtr-uniform">

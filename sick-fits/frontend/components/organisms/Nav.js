@@ -3,6 +3,11 @@ import Link from 'next/link';
 import Nprogress from 'nprogress';
 import Router from 'next/router';
 import User from '../User';
+import SignOut from '../SignOut';
+import {Query, Mutation} from 'react-apollo';
+import { LOCAL_STATE_QUERY, LOCAL_STATE_MUTATION } from '../Cart';
+// LOCAL_STATE_QUERY
+// LOCAL_STATE_MUTATION
 
 Router.onRouteChangeStart = ()=>{
     console.log('routeChangeStart trggered')
@@ -22,21 +27,43 @@ class Nav extends Component {
     render() {
         return (
             <nav id="menu">
-                <img className="menu-logo" src="/static/LOGO-ART.svg"/>
-                <ul>
-                    <User>
-                        {(data) =>{
-                            console.log(data, "<--USER")
-                            return <p>data here</p>
-                        }}
-                    </User>
-                    <Link href="/items"><a>Shop</a></Link>
-                    <Link href="/sell"><a>Sell</a></Link>
-                    <Link href="/"><a>Orders</a></Link>
-                    <Link href="/"><a>Account</a></Link>
-                    <Link href="/signup"><a>signup</a></Link>
+                <Link href="/">
+                    <img className="menu-logo" src="/static/LOGO-ART.svg"/>
+                </Link>
 
-                </ul>
+                <User>
+
+                    {({data: { me }}) =>(
+                        <ul>
+                            
+
+                            <Link href="/items"><a>Shop</a></Link>
+                            {me && (
+
+                                <>
+                                
+                                <Link href="/sell"><a>Sell</a></Link>
+                                <Link href="/"><a>Orders</a></Link>
+                                <Mutation mutation = { LOCAL_STATE_MUTATION }> 
+                                {(mutationFun)=>(
+                                    <a onClick={mutationFun}>cart </a>
+                                )}
+                                </Mutation>
+                                
+                                <SignOut/>
+                                </>
+
+                            )}
+                            {!me && (
+                            <Link href="/signup"><a>signup</a></Link>
+                            )}
+                            <Link href="/"><a>Account</a></Link>
+                            <a className="logged">logged in as: {me.name}</a>
+
+                        </ul>
+                    )}
+
+                </User>
             </nav>                       
         );
     }

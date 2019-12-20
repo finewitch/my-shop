@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import formatMoney from '../lib/formatMoney'
 import Link from 'next/link';
 import DeleteItem from './DeleteItem';
+import AddToCart from './AddToCart';
+
 
 class Item extends Component {
     render() {
         const { item, index, stateIndex } = this.props;
-        // console.log(this.props)
         return (
             <div className='p_wrapper'>
                 
@@ -36,8 +37,8 @@ class Item extends Component {
                         href={{
                             pathname : 'update',
                             query: {id: item.id },
-                        }}><a className="button">edit</a></Link>
-                        <button>add to cart</button>
+                        }}><button>edit</button></Link>
+                        <AddToCart id={ item.id }/>
                         <DeleteItem id={ item.id }/>
                     </div> 
 

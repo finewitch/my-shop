@@ -4,6 +4,7 @@
     // margin: 0 auto;
     position: relative;
     margin-left: auto;
+    
     &-num{
         // border: 2px solid black;
         font-size: 8rem;
@@ -13,6 +14,16 @@
         font-weight: 100;
         font-family: 'Source Code Pro', monospace;
         // width: 20%;
+    }
+    button{
+        color: white!important;
+        box-shadow: none;
+        border-bottom: 1px solid white;
+        border-radius: 0;
+        &:hover{
+            color: black!important;
+            border-bottom: 1px solid black;
+        }
     }
 }
 .p_wrapper-inner{

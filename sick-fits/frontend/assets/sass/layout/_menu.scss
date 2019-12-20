@@ -27,6 +27,13 @@
 			justify-content: center;
 			padding: 40px 0;
 			margin: 0 auto;
+			.logged{
+				opacity: 0.6;
+				// text-decoration: underline;
+				margin-left: 20px;
+				// font-size: 1rem;
+				pointer-events: none;
+			}
 
 			a, span {
 				border-bottom: 0;

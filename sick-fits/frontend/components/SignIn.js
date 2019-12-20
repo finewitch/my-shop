@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag'; 
-import Error from './ErrorMessage'
+import Error from './ErrorMessage';
 import { CURRENT_USER_QUERY } from './User';
+
 import ImageGallery from './ImageGallery'
 
-const SIGN_UP_MUTATION = gql`
-  mutation SIGN_UP_MUTATION (
+const SIGN_IN_MUTATION  = gql`
+  mutation SIGN_IN_MUTATION  (
     $email: String!,
-    $name: String!,
     $password:  String!
-    ){signup(
+    ){ signin (
         email: $email,
-        name: $name,
         password: $password
-    ){ id }  
+    ){ id, email, name }  
   }
 `
 
-class SignUp extends Component {
+class SignIn extends Component {
     state = {
-        name:'',
         password:'',
         email:''
     }
     handleChange = e =>{
-        const {name, type, value} = e.target;
+        const { name, type, value} = e.target;
+        console.log(type, value)
         // console.log({name, type, value}, '<---');
         this.setState({ [ name ] : value })
     
@@ -35,7 +34,7 @@ class SignUp extends Component {
         return (
             <div className="form-wrapper">
                 <Mutation 
-                mutation = { SIGN_UP_MUTATION} 
+                mutation = { SIGN_IN_MUTATION } 
                 variables = {this.state}
                 refetchQueries ={[{ query: CURRENT_USER_QUERY }]}>
                         { (signup, {error, loading}) =>(            
@@ -44,7 +43,6 @@ class SignUp extends Component {
                                 const res = await signup();
                                 console.log(res, '<--res');
                                 this.setState({
-                                    name: '',
                                     email:'',
                                     password:''
                                 })
@@ -52,7 +50,7 @@ class SignUp extends Component {
                             <Error error={error} />
                                 <fieldset disabled={loading} aria-busy={loading}>
 
-                                    <h1 className="c-w">Sign up</h1>
+                                    <h1 className="c-w">Sign in</h1>
 
                                     <div className="col-12">
                                         <input 
@@ -61,17 +59,6 @@ class SignUp extends Component {
                                         value={this.state.email} 
                                         id="email" 
                                         placeholder="E-mail" 
-                                        onChange={this.handleChange}
-                                        />
-                                    </div>
-
-                                    <div className="col-12">
-                                        <input 
-                                        type="text" 
-                                        name="name"
-                                        value={this.state.name} 
-                                        id="name" 
-                                        placeholder="Name" 
                                         onChange={this.handleChange}
                                         />
                                     </div>
@@ -99,5 +86,5 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp;
-export { SIGN_UP_MUTATION };
+export default SignIn;
+export { SIGN_IN_MUTATION };

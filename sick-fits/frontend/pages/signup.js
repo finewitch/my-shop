@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import SignUp from '../components/SignUp'
+import SignIn from '../components/SignIn'
 
 class SignUpPage extends React.Component{
     render(){
@@ -9,8 +10,8 @@ class SignUpPage extends React.Component{
             <div className="col-6 col-12-medium centered">
                 
                 <SignUp />
-                <SignUp />
-                <SignUp />
+                <SignIn />
+                {/* <SignUp /> */}
                 
             </div>
         </div>

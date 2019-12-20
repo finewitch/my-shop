@@ -33,13 +33,11 @@ class AllItems extends Component {
                         // first:perPage
                     }}>
                         {({ data, error, loading }) => {
-                            console.log(data, 'data')
                             let indexNum = perPage * this.props.page - perPage;
-                            console.log(indexNum, '<---')
                             if (loading) return <p>Loading...</p>;
                             if (error) return <p>Error: {error.message}</p>;
                             return (
-                            <div>{data.items.map((item, index) => <Item item={item} key={item.id} index={index + indexNum}/>)}</div>
+                            <div>{data.items.map((item, index) => <Item key={index} item={item} key={item.id} index={index + indexNum}/>)}</div>
                             );
                         }}
                     </Query>
