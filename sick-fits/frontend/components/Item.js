@@ -24,7 +24,7 @@ class Item extends Component {
                         <div className="p_wrapper-inner-w">
                             <span>{item.image &&  <img src={item.image} alt={item.title}/> }</span>
                             <span>
-                                <div className="c-w">{formatMoney(item.price)}</div>
+                                <div className="c-w price">{formatMoney(item.price)}</div>
                                 <div className="c-w">{item.title}</div>
                                 <div className="c-w">{item.negotiable ? <div>do negocjacji</div> : <div>nie do negocjacji</div>}</div>
                                 <div className="c-w"> by author</div>

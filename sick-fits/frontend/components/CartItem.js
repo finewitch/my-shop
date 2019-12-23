@@ -4,6 +4,7 @@ import RemoveFromCart from './RemoveFromCart';
 
 
 const CartItem = ({item}) => {
+    console.log(item, '<--item');
     if(!item.item)return <p>This item has been removed</p>;
     return (
         <div className="cart-product">

@@ -38,8 +38,9 @@ class SingleItem extends Component {
                         </Head>
                         <img src={data.item.largeImage} className="singleItem-img"/>
                         <div className="singleItem-info c-w">
+                        <h2>{data.item.title}</h2>
                         {data.item.price}
-                        {data.item.description}
+                        <p>{data.item.description}</p>
                         </div>
                     </div>
 
@@ -52,3 +53,4 @@ class SingleItem extends Component {
 }
 
 export default SingleItem;
+export { SINGLE_ITEM_QUERY };

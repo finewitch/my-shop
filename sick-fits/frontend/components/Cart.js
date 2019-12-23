@@ -26,7 +26,7 @@ const Cart = () => {
 
                 if(!me) return null;
                 const cart = me.cart
-                console.log(cart)
+                // console.log(cart, 'cart----')
                 return(
 
                 <Mutation mutation = { LOCAL_STATE_MUTATION }> 
@@ -39,7 +39,7 @@ const Cart = () => {
                                             <span>{me.name} cart</span>
                                         </div>
 
-                                        <aside><span>{formatMoney(calcTotalPrice(me.cart))}</span> – you have {me.cart.length} item/s</aside>
+                                        <aside><span>{formatMoney(calcTotalPrice(me.cart))}</span> – you have {me.cart.length-1} item/s</aside>
 
                                         {!cart.length? null : (
                                         <div className="cart-product-tableheader">

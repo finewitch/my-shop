@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartItemComponent/> matches the snapshop 1`] = `
+<div
+  className="cart-product"
+>
+  <div
+    className="cart-product-title"
+  >
+    $12.13
+  </div>
+  <div
+    className="cart-product-index"
+  >
+    1
+     x 
+    $12.13
+  </div>
+  <div
+    className="cart-product-price"
+  >
+    fotka
+  </div>
+  <RemoveFromCart
+    id="ck4hjcero355k0993dhxylnv9"
+  />
+</div>
+`;
+
+exports[`<CartItemComponent/> updates via props 1`] = `
+<div
+  className="cart-product"
+>
+  <div
+    className="cart-product-title"
+  >
+    $12.13
+  </div>
+  <div
+    className="cart-product-index"
+  >
+    1
+     x 
+    $12.13
+  </div>
+  <div
+    className="cart-product-price"
+  >
+    fotka
+  </div>
+  <RemoveFromCart
+    id="ck4hjcero355k0993dhxylnv9"
+  />
+</div>
+`;
+
+exports[`<CartItemComponent/> updates via props 2`] = `
+<div
+  className="cart-product"
+>
+  <div
+    className="cart-product-title"
+  >
+    $24.26
+  </div>
+  <div
+    className="cart-product-index"
+  >
+    2
+     x 
+    $12.13
+  </div>
+  <div
+    className="cart-product-price"
+  >
+    fotka
+  </div>
+  <RemoveFromCart
+    id="ck4hjcero355k0993dhxylnv9"
+  />
+</div>
+`;

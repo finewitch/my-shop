@@ -43,7 +43,7 @@ class Nav extends Component {
                                 <>
                                 
                                 <Link href="/sell"><a>Sell</a></Link>
-                                <Link href="/"><a>Orders</a></Link>
+                                <Link href="/"><a className="disabledp">Orders</a></Link>
                                 <Mutation mutation = { LOCAL_STATE_MUTATION }> 
                                 {(mutationFun)=>(
                                     <a onClick={mutationFun}>cart </a>
@@ -51,14 +51,15 @@ class Nav extends Component {
                                 </Mutation>
                                 
                                 <SignOut/>
+
+                                <Link href="/"><a>Account</a></Link>
+                                <a className="logged">logged in as: {me.name}</a>
                                 </>
 
                             )}
                             {!me && (
                             <Link href="/signup"><a>signup</a></Link>
                             )}
-                            <Link href="/"><a>Account</a></Link>
-                            <a className="logged">logged in as: {me.name}</a>
 
                         </ul>
                     )}
